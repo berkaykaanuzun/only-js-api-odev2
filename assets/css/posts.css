@@ -1,0 +1,281 @@
+body {
+  background: linear-gradient(
+    45deg,
+    #c850c0,
+    #643d88,
+    #c850c0,
+    #643d88,
+    #9987aa,
+    #80d0c7,
+    #0093e9,
+    #80d0c7,
+    #0093e9
+  );
+  background-size: 800% 800%;
+  animation: gradient 20s ease infinite;
+  height: 100vh;
+  background-repeat: no-repeat;
+  font-family: "Roboto", sans-serif;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 25%;
+  }
+  25% {
+    background-position: 100% 75%;
+  }
+  50% {
+    background-position: 25% 50%;
+  }
+  75% {
+    background-position: 50% 25%;
+  }
+  100% {
+    background-position: 50% 75%;
+  }
+}
+
+p {
+  padding: 10%;
+}
+
+/* Card */
+
+.myCard {
+  background-color: transparent;
+  width: 380px;
+  height: 508px;
+  perspective: 1000px;
+  margin: 0px;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.title.title-top,
+.title.title-bottom {
+  font-family: "Bebas Neue", sans-serif;
+}
+.card-title {
+  font-size: 1.5rem;
+  font-family: "Bebas Neue", sans-serif;
+}
+.innerCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.myCard:hover .innerCard {
+  transform: rotateY(180deg);
+}
+
+.frontSide,
+.backSide {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 1rem;
+  color: white;
+  box-shadow: 0 0 0.3em rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+}
+
+.frontSide,
+.frontSide::before {
+  background: linear-gradient(
+    43deg,
+    rgb(100, 61, 136) 0%,
+    rgb(200, 80, 192) 46%,
+    rgb(231, 206, 255) 100%
+  );
+}
+
+.backSide,
+.backSide::before {
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
+
+.backSide {
+  transform: rotateY(180deg);
+}
+
+.frontSide::before,
+.backSide::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  width: 110%;
+  height: 110%;
+  position: absolute;
+  z-index: -1;
+  border-radius: 1em;
+  filter: blur(20px);
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0.3;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.button {
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(255, 255, 255);
+  --btn-color: rgb(100, 61, 136);
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.button::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.button:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.button:active {
+  box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 0.5em 0.25em var(--glow-color);
+}
+
+@media (max-width: 1400px) {
+  .myCard {
+    background-color: transparent;
+    width: 328px;
+    height: 428px;
+    perspective: 1000px;
+    margin: 0px;
+  }
+  .button {
+    margin-top: 10%;
+  }
+}
+@media (max-width: 1200px) {
+  .innerCard {
+    position: relative;
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  .button {
+    margin-top: 10%;
+  }
+}
+
+@media (max-width: 992px) {
+  .myCard {
+    background-color: transparent;
+    width: 328px;
+    height: 428px;
+    perspective: 1000px;
+    margin: 0px;
+  }
+  .button {
+    margin-top: 10%;
+  }
+}
+
+@media (max-width: 767px) {
+  .innerCard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  .myCard {
+    background-color: transparent;
+    width: 270px;
+    height: 390px;
+    perspective: 1000px;
+    margin: 0px;
+  }
+  .button {
+    margin-top: 10%;
+  }
+}
+@media (max-width: 767px) {
+  .innerCard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  .myCard {
+    background-color: transparent;
+    width: 380px;
+    height: 508px;
+    perspective: 1000px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .button {
+    margin-top: 10%;
+  }
+}

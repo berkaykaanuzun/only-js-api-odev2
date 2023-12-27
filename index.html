@@ -3,38 +3,77 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="JavaScript API Project" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, API" />
+    <meta name="author" content="Berkay Kaan Uzun" />
     <title>API Users</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/users.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
-  <body>
+  <body class="table-body">
+    <div class="waveWrapper waveAnimation">
+      <div class="waveWrapperInner bgTop">
+        <div
+          class="wave waveTop"
+          style="
+            background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png');
+          "
+        ></div>
+      </div>
+      <div class="waveWrapperInner bgMiddle">
+        <div
+          class="wave waveMiddle"
+          style="
+            background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png');
+          "
+        ></div>
+      </div>
+      <div class="waveWrapperInner bgBottom">
+        <div
+          class="wave waveBottom"
+          style="
+            background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png');
+          "
+        ></div>
+      </div>
+    </div>
     <main>
-      <section class="mt-5">
-        <div class="container">
+      <section class="table-sec">
+        <div class="container-lg">
           <div class="row">
             <div id="post-box" class="col-12">
-              <h1 class="text-center my-4 fw-bold">API Users</h1>
-              <table>
-                <thead>
-                  <tr class="card-title-head">
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Username</th>
-                    <th>Adress</th>
-                    <th>Company</th>
-                  </tr>
-                </thead>
-                <tbody id="table-body"></tbody>
-              </table>
+              <h1 class="text-center mb-4 fw-bold text-light main-header">
+                API Users
+              </h1>
+              <div class="rounded border-table">
+                <table class="">
+                  <thead>
+                    <tr class="card-title-head">
+                      <th class="rainbow">ID</th>
+                      <th class="rainbow">Name</th>
+                      <th class="rainbow">Username</th>
+                      <th class="rainbow">Address</th>
+                      <th class="rainbow">Company</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-body"></tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

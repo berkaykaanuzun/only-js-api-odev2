@@ -9,10 +9,12 @@ const getUsers = async () => {
 
     const tableBodyContent = `  <tr>
     <td class="card-title">
-    <a href="posts.html?userId=${users.id}">
-      <span class="card-span"> ID : </span>
-      ${users.id}
-    </a>
+    <a href="posts.html?userId=${users.id}" class="learn-more">
+    <span class="circle" aria-hidden="true">
+      <span class="icon arrow"></span>
+    </span>
+    <span class="button-text">ID: ${users.id} </span>
+  </a>
   </td>
        <td class="card-title"><span class="card-span"> Name : </span>${users.name}</td>
        <td class="card-title"><span class="card-span"> Username : </span>${users.username}</td>
