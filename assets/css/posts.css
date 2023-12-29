@@ -11,7 +11,7 @@ body {
     #80d0c7,
     #0093e9
   );
-  background-size: 800% 800%;
+  background-size: 1000% 1000%;
   animation: gradient 20s ease infinite;
   height: 100vh;
   background-repeat: no-repeat;
@@ -49,7 +49,6 @@ p {
   perspective: 1000px;
   margin: 0px;
 }
-
 .title {
   font-size: 2em;
   font-weight: 900;
@@ -151,11 +150,11 @@ p {
   --enhanced-glow-color: rgb(255, 255, 255);
   --btn-color: rgb(100, 61, 136);
   border: 0.25em solid var(--glow-color);
-  padding: 1em 3em;
+  padding: 1rem 5rem;
   color: var(--glow-color);
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: bold;
-
+  text-decoration: none;
   background-color: var(--btn-color);
   border-radius: 1em;
   outline: none;
